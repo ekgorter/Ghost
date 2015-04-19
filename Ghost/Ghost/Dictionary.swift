@@ -8,6 +8,8 @@
 
 import Foundation
 
+// TO DO: Takes dictionary as string with new lines, not as array.
+
 class Dictionary {
     
     // Lists containing dictionary and filtered dictionary.
@@ -20,22 +22,21 @@ class Dictionary {
         self.wordsBackup = words
     }
     
-    // Filters dictionary array using given string. 
-    // TO DO: Only filter when strings are equal from beginning of string.
+    // Filters dictionary array using given string.
     func filter(filterWord: String) {
         
-        self.words = words.filter {$0.rangeOfString(filterWord) != nil}
-        }
-
+        self.words = words.filter { $0.hasPrefix(filterWord) }
+    }
+    
     // Counts amount of words remaining in filtered dictionary.
     func count() -> Int {
         
         return self.words.count
     }
-
+    
     // Returns single remaining word in dictionary.
     func result() -> String {
-            
+        
         return self.words[0]
     }
     

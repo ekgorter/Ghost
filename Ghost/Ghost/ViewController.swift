@@ -9,8 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBAction func test(sender: AnyObject) {
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,4 +22,36 @@ class ViewController: UIViewController {
 
 
 }
+
+// Game test variables and function. Tested in Playground, worked properly.
+// Calling test function in viewcontroller gives errors.
+var dictionary = ["bal", "luchtballon", "baas", "balkon", "handbal"]
+
+let dict = Dictionary(words: dictionary)
+
+let game = Game(dictionary: dict)
+
+func testGame(dict: Dictionary, game: Game, input: String) {
+    
+    game.guess(input)
+    
+    if game.ended() == true {
+        
+        println("Player one wins: \(game.winner())")
+        
+        if dict.count() == 1 {
+            
+            println("Remaining word: \(dict.result())")
+        }
+    }
+    
+    game.turn()
+}
+
+// gives errors in viewcontroller
+testGame(dict, game, "b")
+
+testGame(dict, game, "a")
+
+testGame(dict, game, "a")
 

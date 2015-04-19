@@ -8,8 +8,11 @@
 
 import Foundation
 
+// TO DO: Game over when word longer than three letters is formed.
+
 class Game {
     
+    // Game variables, player one starts game.
     var dictionary: Dictionary
     var currentWordTyped: String
     var currentPlayerIsPLayerOne: Bool
@@ -23,17 +26,21 @@ class Game {
         self.gameHasEnded = false
     }
     
+    // Appends input letter to game word, filters dictionary with game word.
     func guess(input: String) {
         
         currentWordTyped += input
         dictionary.filter(currentWordTyped)
     }
     
+    // Switches player, returns whose turn it is.
     func turn() -> Bool {
         
+        self.currentPlayerIsPLayerOne = !self.currentPlayerIsPLayerOne
         return self.currentPlayerIsPLayerOne
     }
     
+    // Checks if end game condition is met.
     func ended() -> Bool {
         
         if dictionary.count() == 1 || dictionary.count() == 0 {
@@ -47,8 +54,17 @@ class Game {
         }
     }
     
+    // Returns winner depending on end game condition.
     func winner() -> Bool {
         
-        return self.currentPlayerIsPLayerOne
+        if dictionary.count() == 1 {
+            
+            return self.currentPlayerIsPLayerOne
+        }
+        else {
+            
+            return self.turn()
+        }
+        
     }
 }
