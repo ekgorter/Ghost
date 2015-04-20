@@ -8,8 +8,6 @@
 
 import Foundation
 
-// TO DO: Game over when word longer than three letters is formed.
-
 class Game {
     
     // Game variables, player one starts game.
@@ -43,28 +41,32 @@ class Game {
     // Checks if end game condition is met.
     func ended() -> Bool {
         
-        if dictionary.count() == 1 || dictionary.count() == 0 {
+        // If no words remain.
+        if dictionary.count() == 0 {
             
             self.gameHasEnded = true
             return self.gameHasEnded
         }
-        else {
+        // If an exact match is found for a word longer than 3 letters.
+        else if count(self.currentWordTyped) > 3 {
+            
+            if contains(dictionary.words, self.currentWordTyped) {
+               
+                self.gameHasEnded = true
+                return self.gameHasEnded
+            } else {
+                
+                return self.gameHasEnded
+            }
+        } else {
             
             return self.gameHasEnded
         }
     }
     
-    // Returns winner depending on end game condition.
+    // Returns winner, being the opposite player of who triggered an end game.
     func winner() -> Bool {
-        
-        if dictionary.count() == 1 {
-            
-            return self.currentPlayerIsPLayerOne
-        }
-        else {
-            
-            return self.turn()
-        }
-        
+
+        return self.turn()
     }
 }

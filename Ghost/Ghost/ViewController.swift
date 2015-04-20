@@ -11,8 +11,40 @@ import UIKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        var dictionary = "bal\nballen\nballon\nluchtballon\nbalkon\nhandbal"
+        
+        let dict = Dictionary(words: dictionary)
+        
+        let game = Game(dictionary: dict)
+        
+        func testGame(dict: Dictionary, game: Game, input: String) {
+            
+            game.guess(input)
+            
+            if game.ended() == true {
+                
+                println("Player one wins: \(game.winner())")
+                
+                println("Remaining word: \(game.currentWordTyped)")
+            }
+            
+            game.turn()
+        }
+        
+        testGame(dict, game, "b")
+        
+        testGame(dict, game, "a")
+        
+        testGame(dict, game, "l")
+        
+        testGame(dict, game, "l")
+        
+        testGame(dict, game, "e")
+        
+        testGame(dict, game, "n")
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,35 +55,5 @@ class ViewController: UIViewController {
 
 }
 
-// Game test variables and function. Tested in Playground, worked properly.
-// Calling test function in viewcontroller gives errors.
-var dictionary = ["bal", "luchtballon", "baas", "balkon", "handbal"]
 
-let dict = Dictionary(words: dictionary)
-
-let game = Game(dictionary: dict)
-
-func testGame(dict: Dictionary, game: Game, input: String) {
-    
-    game.guess(input)
-    
-    if game.ended() == true {
-        
-        println("Player one wins: \(game.winner())")
-        
-        if dict.count() == 1 {
-            
-            println("Remaining word: \(dict.result())")
-        }
-    }
-    
-    game.turn()
-}
-
-// gives errors in viewcontroller
-testGame(dict, game, "b")
-
-testGame(dict, game, "a")
-
-testGame(dict, game, "a")
 

@@ -8,18 +8,16 @@
 
 import Foundation
 
-// TO DO: Takes dictionary as string with new lines, not as array.
-
 class Dictionary {
     
     // Lists containing dictionary and filtered dictionary.
     var words: [String]
     let wordsBackup: [String]
     
-    init(words: [String]) {
+    init(words: String) {
         
-        self.words = words
-        self.wordsBackup = words
+        self.words = words.componentsSeparatedByString("\n")
+        self.wordsBackup = words.componentsSeparatedByString("\n")
     }
     
     // Filters dictionary array using given string.
