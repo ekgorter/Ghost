@@ -13,8 +13,11 @@
 		643CA78F1ADFDEC90070C5A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 643CA78E1ADFDEC90070C5A5 /* Images.xcassets */; };
 		643CA7921ADFDEC90070C5A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 643CA7901ADFDEC90070C5A5 /* LaunchScreen.xib */; };
 		643CA79E1ADFDEC90070C5A5 /* GhostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CA79D1ADFDEC90070C5A5 /* GhostTests.swift */; };
+		648D9EDB1AE510A500F58C0B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648D9EDA1AE510A500F58C0B /* GameViewController.swift */; };
 		64C1C08F1AE40160003822AD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C1C08E1AE40160003822AD /* Dictionary.swift */; };
 		64C1C0911AE433BA003822AD /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C1C0901AE433BA003822AD /* Game.swift */; };
+		64E5FB4C1AED1AA100A05831 /* dutch.txt in Resources */ = {isa = PBXBuildFile; fileRef = 64E5FB4A1AED1AA100A05831 /* dutch.txt */; };
+		64E5FB4D1AED1AA100A05831 /* english.txt in Resources */ = {isa = PBXBuildFile; fileRef = 64E5FB4B1AED1AA100A05831 /* english.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +41,11 @@
 		643CA7971ADFDEC90070C5A5 /* GhostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GhostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		643CA79C1ADFDEC90070C5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		643CA79D1ADFDEC90070C5A5 /* GhostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostTests.swift; sourceTree = "<group>"; };
+		648D9EDA1AE510A500F58C0B /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		64C1C08E1AE40160003822AD /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		64C1C0901AE433BA003822AD /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		64E5FB4A1AED1AA100A05831 /* dutch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dutch.txt; sourceTree = "<group>"; };
+		64E5FB4B1AED1AA100A05831 /* english.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = english.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +89,13 @@
 			children = (
 				643CA7871ADFDEC90070C5A5 /* AppDelegate.swift */,
 				643CA7891ADFDEC90070C5A5 /* ViewController.swift */,
+				648D9EDA1AE510A500F58C0B /* GameViewController.swift */,
 				64C1C08E1AE40160003822AD /* Dictionary.swift */,
 				64C1C0901AE433BA003822AD /* Game.swift */,
 				643CA78B1ADFDEC90070C5A5 /* Main.storyboard */,
 				643CA78E1ADFDEC90070C5A5 /* Images.xcassets */,
 				643CA7901ADFDEC90070C5A5 /* LaunchScreen.xib */,
+				64E5FB4E1AED1AB300A05831 /* Dictionaries */,
 				643CA7851ADFDEC90070C5A5 /* Supporting Files */,
 			);
 			path = Ghost;
@@ -116,6 +124,15 @@
 				643CA79C1ADFDEC90070C5A5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64E5FB4E1AED1AB300A05831 /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				64E5FB4A1AED1AA100A05831 /* dutch.txt */,
+				64E5FB4B1AED1AA100A05831 /* english.txt */,
+			);
+			name = Dictionaries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				643CA78D1ADFDEC90070C5A5 /* Main.storyboard in Resources */,
+				64E5FB4D1AED1AA100A05831 /* english.txt in Resources */,
 				643CA7921ADFDEC90070C5A5 /* LaunchScreen.xib in Resources */,
 				643CA78F1ADFDEC90070C5A5 /* Images.xcassets in Resources */,
+				64E5FB4C1AED1AA100A05831 /* dutch.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648D9EDB1AE510A500F58C0B /* GameViewController.swift in Sources */,
 				643CA78A1ADFDEC90070C5A5 /* ViewController.swift in Sources */,
 				643CA7881ADFDEC90070C5A5 /* AppDelegate.swift in Sources */,
 				64C1C08F1AE40160003822AD /* Dictionary.swift in Sources */,
