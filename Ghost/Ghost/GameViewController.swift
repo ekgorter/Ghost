@@ -8,15 +8,16 @@
 
 import UIKit
 
+// Loads dictionary and game session.
 let path = NSBundle.mainBundle().pathForResource("dutch", ofType:"txt")
-
 let dictionary = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)!
-
 let dict = Dictionary(words: dictionary)
-
 let game = Game(dictionary: dict)
 
 class GameViewController: UIViewController {
+    
+    var player1Name = ""
+    var player2Name = ""
     
     @IBOutlet weak var playerOneLabel: UILabel!
     
@@ -42,15 +43,11 @@ class GameViewController: UIViewController {
         if game.ended() == true {
             
             if game.winner() == true {
-                
-                playerOneLabel.text = "Player 1 Wins!!"
+                playerOneLabel.text = playerOneLabel.text! + " Wins!!"
             } else {
-                
-                playerTwoLabel.text = "Player 2 Wins!!"
+                playerTwoLabel.text = playerTwoLabel.text! + " Wins!!"
             }
-            
             println("Player one wins: \(game.winner())")
-            
             println("Remaining word: \(game.currentWordTyped)")
         }
         
@@ -63,7 +60,6 @@ class GameViewController: UIViewController {
     
     // Swaps the text color of the player labels.
     func switch_player_label(player1: UILabel, player2: UILabel) {
-        
         let temp = player1.textColor
         player1.textColor = player2.textColor
         player2.textColor = temp
@@ -71,7 +67,14 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playerOneLabel.text = player1Name
+        playerTwoLabel.text = player2Name
         // Do any additional setup after loading the view.
+    }
+    
+    // Hides navigation bar in game screen.
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
     }
 
     override func didReceiveMemoryWarning() {
