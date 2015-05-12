@@ -30,6 +30,7 @@
                                 </state>
                                 <connections>
                                     <action selector="saveNameButton:" destination="6fE-f1-cBd" eventType="touchUpInside" id="sGk-Cx-FQw"/>
+                                    <segue destination="obN-Dk-aKM" kind="unwind" unwindAction="unwindToSelect:" id="w4s-PW-Cfc"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YWb-ok-GYg">
@@ -57,6 +58,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDX-C2-lUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="obN-Dk-aKM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="956" y="-517"/>
         </scene>
@@ -254,6 +256,7 @@
                                 </state>
                                 <connections>
                                     <action selector="saveNameButton:" destination="q8X-vb-zTf" eventType="touchUpInside" id="259-3Z-jJp"/>
+                                    <segue destination="ddt-dO-vmz" kind="unwind" unwindAction="unwindToSelect:" id="pvK-dZ-eFp"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xc8-E9-JAt">
@@ -281,8 +284,94 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vdd-zY-7s4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ddt-dO-vmz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1666" y="217"/>
+        </scene>
+        <!--Ghost-->
+        <scene sceneID="5nD-Lg-G2r">
+            <objects>
+                <viewController id="7bu-ST-3Eb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bNw-ap-Bz9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ndr-fP-daX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n8K-gz-eNQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz2-vD-pN5">
+                                <rect key="frame" x="40" y="64" width="30" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3zX-Wt-ypB" kind="show" id="UVj-ti-isS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7i2-cP-97b">
+                                <rect key="frame" x="16" y="102" width="78" height="30"/>
+                                <state key="normal" title="Highscores">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrK-IN-D1B">
+                                <rect key="frame" x="27" y="140" width="57" height="30"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qri-ad-Ft6" kind="show" id="4Sa-XA-O9e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ghost" id="JKm-X8-wMt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vc3-fd-VO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="217"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Ype-Jp-ddr">
+            <objects>
+                <viewController id="qri-ad-Ft6" customClass="SettingsViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ij3-wT-VbH"/>
+                        <viewControllerLayoutGuide type="bottom" id="eD3-1i-eg2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CdP-lr-8Bc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dictionary Language:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggp-BH-U1V">
+                                <rect key="frame" x="219" y="257" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MA8-i3-c1l">
+                                <rect key="frame" x="219" y="286" width="163" height="29"/>
+                                <segments>
+                                    <segment title="NL"/>
+                                    <segment title="EN"/>
+                                </segments>
+                                <connections>
+                                    <action selector="saveLanguageSegmentedControl:" destination="qri-ad-Ft6" eventType="valueChanged" id="Zh5-m0-vc2"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="CYy-dU-22v"/>
+                    <connections>
+                        <outlet property="languageSegmentedControl" destination="MA8-i3-c1l" id="b5c-hi-y5S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dW3-U3-bH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="949"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7WP-Vo-9wb">
@@ -295,12 +384,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="3zX-Wt-ypB" kind="relationship" relationship="rootViewController" id="fyX-di-QYf"/>
+                        <segue destination="7bu-ST-3Eb" kind="relationship" relationship="rootViewController" id="CJN-6d-YNv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQY-rM-2gn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144" y="217"/>
+            <point key="canvasLocation" x="-442" y="217"/>
         </scene>
     </scenes>
 </document>

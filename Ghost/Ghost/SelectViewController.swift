@@ -22,13 +22,16 @@ class SelectViewController: UIViewController, NewName1ViewControllerDelegate, Ne
     // Saves player 1 name.
     func saveName1(controller: NewName1ViewController, name: String) {
         player1Label.text = name
-        controller.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    // Returns user to player select screen when new name is entered.
+    @IBAction func unwindToSelect(segue: UIStoryboardSegue) {
+        
     }
     
     // Saves player 2 name.
     func saveName2(controller: NewName2ViewController, name: String) {
         player2Label.text = name
-        controller.navigationController?.popToRootViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {

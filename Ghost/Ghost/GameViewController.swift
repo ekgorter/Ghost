@@ -9,13 +9,14 @@
 import UIKit
 
 // Loads dictionary and game session.
-let path = NSBundle.mainBundle().pathForResource("dutch", ofType:"txt")
+var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+let path = selected_dictionary(defaults)
 let dictionary = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)!
 let dict = Dictionary(words: dictionary)
 let game = Game(dictionary: dict)
 
 class GameViewController: UIViewController {
-    
+
     var player1Name = ""
     var player2Name = ""
     
@@ -29,19 +30,14 @@ class GameViewController: UIViewController {
     
     // When "add" button is pressed:
     @IBAction func addLetterButton(sender: AnyObject) {
-        
         // Input in textfield is sent to game class.
         game.guess(letterInputTextField.text)
-        
         // Label displaying typed letters is updated.
         wordDisplayLabel.text! = game.currentWordTyped
-        
         // Clear text field input.
         letterInputTextField.text = ""
-        
         // If the game ends the winner is shown.
         if game.ended() == true {
-            
             if game.winner() == true {
                 playerOneLabel.text = playerOneLabel.text! + " Wins!!"
             } else {
@@ -50,10 +46,8 @@ class GameViewController: UIViewController {
             println("Player one wins: \(game.winner())")
             println("Remaining word: \(game.currentWordTyped)")
         }
-        
         // The turn passes to the next player.
         game.turn()
-        
         // The label with the player name whose turn is over changes to the background color (white) to make it invisible. 
         switch_player_label(playerOneLabel, player2: playerTwoLabel)
     }
@@ -82,7 +76,6 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -92,5 +85,19 @@ class GameViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+// Selects dictionary based on settings in settings screen.
+func selected_dictionary(defaults: NSUserDefaults) -> String? {
+    var dutch = NSBundle.mainBundle().pathForResource("dutch", ofType:"txt")
+    var english = NSBundle.mainBundle().pathForResource("english", ofType:"txt")
+    
+    switch defaults.integerForKey("language") {
+    case 0:
+        return dutch
+    case 1:
+        return english
+    default:
+        return dutch
+    }
 }
