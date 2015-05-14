@@ -16,7 +16,6 @@ protocol NewName2ViewControllerDelegate {
 class NewName2ViewController: UIViewController {
     
     var delegate: NewName2ViewControllerDelegate? = nil
-    var namePlayer2 = ""
 
     @IBOutlet weak var nameEntryTextField: UITextField!
  

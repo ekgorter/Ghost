@@ -8,7 +8,11 @@
 
 import UIKit
 
-class SelectViewController: UIViewController, NewName1ViewControllerDelegate, NewName2ViewControllerDelegate {
+class SelectViewController: UIViewController, NewName1ViewControllerDelegate, NewName2ViewControllerDelegate, Player1NamesTableViewControllerDelegate, Player2NamesTableViewControllerDelegate {
+    
+    var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    var playerNames: [String]!
+    var highscores: [String: Int]!
     
     @IBOutlet weak var player1Label: UILabel!
     
@@ -16,12 +20,26 @@ class SelectViewController: UIViewController, NewName1ViewControllerDelegate, Ne
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let playersIsNotNill = defaults.objectForKey("playerNames") as? [String] {
+            playerNames = playersIsNotNill
+        } else {
+            playerNames = []
+        }
+        if let scores = defaults.objectForKey("highscores") as? [String: Int] {
+            highscores = scores
+        } else {
+            highscores = [:]
+        }
         // Do any additional setup after loading the view.
     }
     
     // Saves player 1 name.
     func saveName1(controller: NewName1ViewController, name: String) {
         player1Label.text = name
+        self.playerNames.append(name)
+        defaults.setObject(self.playerNames, forKey: "playerNames")
+        self.highscores[name] = 0
+        defaults.setObject(self.highscores, forKey: "highscores")
     }
     
     // Returns user to player select screen when new name is entered.
@@ -32,8 +50,20 @@ class SelectViewController: UIViewController, NewName1ViewControllerDelegate, Ne
     // Saves player 2 name.
     func saveName2(controller: NewName2ViewController, name: String) {
         player2Label.text = name
+        self.playerNames.append(name)
+        defaults.setObject(self.playerNames, forKey: "playerNames")
+        self.highscores[name] = 0
+        defaults.setObject(self.highscores, forKey: "highscores")
     }
 
+    func setName1(controller: Player1NamesTableViewController, name: String) {
+        player1Label.text = name
+    }
+    
+    func setName2(controller: Player2NamesTableViewController, name: String) {
+        player2Label.text = name
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,12 +73,10 @@ class SelectViewController: UIViewController, NewName1ViewControllerDelegate, Ne
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "newName1Segue" {
             let vc = segue.destinationViewController as! NewName1ViewController
-            vc.namePlayer1 = player1Label.text!
             vc.delegate = self
         }
         if segue.identifier == "newName2Segue" {
             let vc = segue.destinationViewController as! NewName2ViewController
-            vc.namePlayer2 = player2Label.text!
             vc.delegate = self
         }
         if segue.identifier == "gameSegue" {
@@ -56,6 +84,14 @@ class SelectViewController: UIViewController, NewName1ViewControllerDelegate, Ne
             let vc = segue.destinationViewController as! GameViewController
             vc.player1Name = player1Label.text!
             vc.player2Name = player2Label.text!
+        }
+        if segue.identifier == "selectName1Segue" {
+            let vc = segue.destinationViewController as! Player1NamesTableViewController
+            vc.delegate = self
+        }
+        if segue.identifier == "selectName2Segue" {
+            let vc = segue.destinationViewController as! Player2NamesTableViewController
+            vc.delegate = self
         }
     }
     

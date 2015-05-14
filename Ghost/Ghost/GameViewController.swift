@@ -19,6 +19,7 @@ class GameViewController: UIViewController {
 
     var player1Name = ""
     var player2Name = ""
+    var highscores: [String: Int]!
     
     @IBOutlet weak var playerOneLabel: UILabel!
     
@@ -39,8 +40,16 @@ class GameViewController: UIViewController {
         // If the game ends the winner is shown.
         if game.ended() == true {
             if game.winner() == true {
+                if let winnerExists = highscores[playerOneLabel.text!] {
+                    highscores[playerOneLabel.text!]! += 1
+                    defaults.setObject(self.highscores, forKey: "highscores")
+                }
                 playerOneLabel.text = playerOneLabel.text! + " Wins!!"
             } else {
+                if let winnerExists = highscores[playerOneLabel.text!] {
+                    highscores[playerOneLabel.text!]! += 1
+                    defaults.setObject(self.highscores, forKey: "highscores")
+                }
                 playerTwoLabel.text = playerTwoLabel.text! + " Wins!!"
             }
             println("Player one wins: \(game.winner())")
@@ -63,6 +72,11 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         playerOneLabel.text = player1Name
         playerTwoLabel.text = player2Name
+        if let scores = defaults.objectForKey("highscores") as? [String: Int] {
+            highscores = scores
+        } else {
+            highscores = [:]
+        }
         // Do any additional setup after loading the view.
     }
     

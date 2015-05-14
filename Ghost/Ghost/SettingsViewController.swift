@@ -33,6 +33,11 @@ class SettingsViewController: UIViewController {
     // Loads view with last language selected from NSUserDefaults.
     override func viewDidLoad() {
         super.viewDidLoad()
+//        NSUserDefaults.standardUserDefaults().removeObjectForKey("playerNames")
+//        NSUserDefaults.standardUserDefaults().removeObjectForKey("highscores")
+//        println(NSUserDefaults.standardUserDefaults().dictionaryRepresentation().keys.array.count)
+//        println(NSUserDefaults.standardUserDefaults().dictionaryRepresentation())
+//        println(NSUserDefaults.standardUserDefaults().dictionaryRepresentation().keys.array)
         switch defaults.integerForKey("language") {
         case 0:
             languageSegmentedControl.selectedSegmentIndex = 0
