@@ -46,14 +46,12 @@ class GameViewController: UIViewController {
                 }
                 playerOneLabel.text = playerOneLabel.text! + " Wins!!"
             } else {
-                if let winnerExists = highscores[playerOneLabel.text!] {
-                    highscores[playerOneLabel.text!]! += 1
+                if let winnerExists = highscores[playerTwoLabel.text!] {
+                    highscores[playerTwoLabel.text!]! += 1
                     defaults.setObject(self.highscores, forKey: "highscores")
                 }
                 playerTwoLabel.text = playerTwoLabel.text! + " Wins!!"
             }
-            println("Player one wins: \(game.winner())")
-            println("Remaining word: \(game.currentWordTyped)")
         }
         // The turn passes to the next player.
         game.turn()
@@ -77,7 +75,6 @@ class GameViewController: UIViewController {
         } else {
             highscores = [:]
         }
-        // Do any additional setup after loading the view.
     }
     
     // Hides navigation bar in game screen.
@@ -87,18 +84,7 @@ class GameViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 // Selects dictionary based on settings in settings screen.

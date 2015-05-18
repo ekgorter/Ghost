@@ -8,16 +8,37 @@
 
 import UIKit
 
-class SelectViewController: UIViewController, NewName1ViewControllerDelegate, NewName2ViewControllerDelegate, Player1NamesTableViewControllerDelegate, Player2NamesTableViewControllerDelegate {
+// Controls the player selection screen.
+class SelectViewController: UIViewController, NewNameViewControllerDelegate, ExistingPlayersTableViewControllerDelegate {
     
     var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     var playerNames: [String]!
     var highscores: [String: Int]!
+    var playerIsPlayer1: Bool = true
     
+    // Displays currently selected players.
     @IBOutlet weak var player1Label: UILabel!
-    
     @IBOutlet weak var player2Label: UILabel!
     
+    // Show new name entry screen, for player 1 or player 2.
+    @IBAction func newPlayer1Button(sender: AnyObject) {
+        playerIsPlayer1 = true
+    }
+    @IBAction func newPlayer2Button(sender: AnyObject) {
+        playerIsPlayer1 = false
+        performSegueWithIdentifier("newNameSegue", sender: sender)
+    }
+    
+    // Show table with existing players to select, for player 1 or player 2.
+    @IBAction func existingPlayer1Button(sender: AnyObject) {
+        playerIsPlayer1 = true
+    }
+    @IBAction func existingPlayer2Button(sender: AnyObject) {
+        playerIsPlayer1 = false
+        performSegueWithIdentifier("existingPlayerSegue", sender: sender)
+    }
+
+    // Load view with data from NSUserDefaults, if existing.
     override func viewDidLoad() {
         super.viewDidLoad()
         if let playersIsNotNill = defaults.objectForKey("playerNames") as? [String] {
@@ -30,79 +51,54 @@ class SelectViewController: UIViewController, NewName1ViewControllerDelegate, Ne
         } else {
             highscores = [:]
         }
-        // Do any additional setup after loading the view.
     }
     
-    // Saves player 1 name.
-    func saveName1(controller: NewName1ViewController, name: String) {
-        player1Label.text = name
+    // Saves player name.
+    func saveName(controller: NewNameViewController, name: String, isPlayer1: Bool) {
+        if isPlayer1 {
+            player1Label.text = name
+        } else {
+           player2Label.text = name
+        }
         self.playerNames.append(name)
         defaults.setObject(self.playerNames, forKey: "playerNames")
         self.highscores[name] = 0
         defaults.setObject(self.highscores, forKey: "highscores")
     }
     
-    // Returns user to player select screen when new name is entered.
+    // Shows selected player name in label.
+    func setName(controller: ExistingPlayersTableViewController, name: String, isPlayer1: Bool) {
+        if isPlayer1 {
+            player1Label.text = name
+        } else {
+            player2Label.text = name
+        }
+    }
+    
+    // Returns user to player select screen when new name is entered or existing name is chosen.
     @IBAction func unwindToSelect(segue: UIStoryboardSegue) {
-        
-    }
-    
-    // Saves player 2 name.
-    func saveName2(controller: NewName2ViewController, name: String) {
-        player2Label.text = name
-        self.playerNames.append(name)
-        defaults.setObject(self.playerNames, forKey: "playerNames")
-        self.highscores[name] = 0
-        defaults.setObject(self.highscores, forKey: "highscores")
-    }
-
-    func setName1(controller: Player1NamesTableViewController, name: String) {
-        player1Label.text = name
-    }
-    
-    func setName2(controller: Player2NamesTableViewController, name: String) {
-        player2Label.text = name
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // Segues for transferring player names.
+    // Segues for transferring player names between screens.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "newName1Segue" {
-            let vc = segue.destinationViewController as! NewName1ViewController
+        if segue.identifier == "newNameSegue" {
+            let vc = segue.destinationViewController as! NewNameViewController
+            vc.playerIsPlayer1 = playerIsPlayer1
             vc.delegate = self
         }
-        if segue.identifier == "newName2Segue" {
-            let vc = segue.destinationViewController as! NewName2ViewController
+        if segue.identifier == "existingPlayerSegue" {
+            let vc = segue.destinationViewController as! ExistingPlayersTableViewController
+            vc.playerIsPlayer1 = playerIsPlayer1
             vc.delegate = self
         }
         if segue.identifier == "gameSegue" {
-            
             let vc = segue.destinationViewController as! GameViewController
             vc.player1Name = player1Label.text!
             vc.player2Name = player2Label.text!
         }
-        if segue.identifier == "selectName1Segue" {
-            let vc = segue.destinationViewController as! Player1NamesTableViewController
-            vc.delegate = self
-        }
-        if segue.identifier == "selectName2Segue" {
-            let vc = segue.destinationViewController as! Player2NamesTableViewController
-            vc.delegate = self
-        }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
