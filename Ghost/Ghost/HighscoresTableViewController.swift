@@ -14,6 +14,11 @@ class HighscoresTableViewController: UITableViewController {
     var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     var highscores: [String: Int]!
     var playerNames: [String]!
+        
+    // Show navigation bar in screen.
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+    }
     
     // Loads player names and scores if existing.
     override func viewDidLoad() {

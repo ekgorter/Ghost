@@ -10,6 +10,7 @@
 		640431DC1AF63101001415E2 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640431DB1AF63101001415E2 /* SelectViewController.swift */; };
 		640BDDD21B00E83C00A7FD0B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640BDDD11B00E83C00A7FD0B /* SettingsViewController.swift */; };
 		640BDE3A1B04B24C00A7FD0B /* HighscoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640BDE391B04B24C00A7FD0B /* HighscoresTableViewController.swift */; };
+		64351DFF1B0B359C00423508 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64351DFE1B0B359C00423508 /* WinViewController.swift */; };
 		643CA7881ADFDEC90070C5A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CA7871ADFDEC90070C5A5 /* AppDelegate.swift */; };
 		643CA78D1ADFDEC90070C5A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643CA78B1ADFDEC90070C5A5 /* Main.storyboard */; };
 		643CA78F1ADFDEC90070C5A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 643CA78E1ADFDEC90070C5A5 /* Images.xcassets */; };
@@ -17,6 +18,7 @@
 		643CA79E1ADFDEC90070C5A5 /* GhostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CA79D1ADFDEC90070C5A5 /* GhostTests.swift */; };
 		64669E511B0A14D300935C5D /* NewNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64669E501B0A14D300935C5D /* NewNameViewController.swift */; };
 		64669E551B0A1D3100935C5D /* ExistingPlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64669E541B0A1D3100935C5D /* ExistingPlayersTableViewController.swift */; };
+		64669E571B0A3BF800935C5D /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64669E561B0A3BF800935C5D /* MainMenuViewController.swift */; };
 		648D9EDB1AE510A500F58C0B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648D9EDA1AE510A500F58C0B /* GameViewController.swift */; };
 		64C1C08F1AE40160003822AD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C1C08E1AE40160003822AD /* Dictionary.swift */; };
 		64C1C0911AE433BA003822AD /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C1C0901AE433BA003822AD /* Game.swift */; };
@@ -38,6 +40,7 @@
 		640431DB1AF63101001415E2 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		640BDDD11B00E83C00A7FD0B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		640BDE391B04B24C00A7FD0B /* HighscoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoresTableViewController.swift; sourceTree = "<group>"; };
+		64351DFE1B0B359C00423508 /* WinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
 		643CA7821ADFDEC90070C5A5 /* Ghost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ghost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		643CA7861ADFDEC90070C5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		643CA7871ADFDEC90070C5A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		643CA79D1ADFDEC90070C5A5 /* GhostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostTests.swift; sourceTree = "<group>"; };
 		64669E501B0A14D300935C5D /* NewNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNameViewController.swift; sourceTree = "<group>"; };
 		64669E541B0A1D3100935C5D /* ExistingPlayersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingPlayersTableViewController.swift; sourceTree = "<group>"; };
+		64669E561B0A3BF800935C5D /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		648D9EDA1AE510A500F58C0B /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		64C1C08E1AE40160003822AD /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		64C1C0901AE433BA003822AD /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -96,12 +100,14 @@
 			isa = PBXGroup;
 			children = (
 				643CA7871ADFDEC90070C5A5 /* AppDelegate.swift */,
+				64669E561B0A3BF800935C5D /* MainMenuViewController.swift */,
+				640BDE391B04B24C00A7FD0B /* HighscoresTableViewController.swift */,
+				640BDDD11B00E83C00A7FD0B /* SettingsViewController.swift */,
 				640431DB1AF63101001415E2 /* SelectViewController.swift */,
 				64669E501B0A14D300935C5D /* NewNameViewController.swift */,
 				64669E541B0A1D3100935C5D /* ExistingPlayersTableViewController.swift */,
 				648D9EDA1AE510A500F58C0B /* GameViewController.swift */,
-				640BDDD11B00E83C00A7FD0B /* SettingsViewController.swift */,
-				640BDE391B04B24C00A7FD0B /* HighscoresTableViewController.swift */,
+				64351DFE1B0B359C00423508 /* WinViewController.swift */,
 				64C1C08E1AE40160003822AD /* Dictionary.swift */,
 				64C1C0901AE433BA003822AD /* Game.swift */,
 				643CA78B1ADFDEC90070C5A5 /* Main.storyboard */,
@@ -255,9 +261,11 @@
 				64C1C08F1AE40160003822AD /* Dictionary.swift in Sources */,
 				640431DC1AF63101001415E2 /* SelectViewController.swift in Sources */,
 				64669E511B0A14D300935C5D /* NewNameViewController.swift in Sources */,
+				64669E571B0A3BF800935C5D /* MainMenuViewController.swift in Sources */,
 				64C1C0911AE433BA003822AD /* Game.swift in Sources */,
 				64669E551B0A1D3100935C5D /* ExistingPlayersTableViewController.swift in Sources */,
 				640BDDD21B00E83C00A7FD0B /* SettingsViewController.swift in Sources */,
+				64351DFF1B0B359C00423508 /* WinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

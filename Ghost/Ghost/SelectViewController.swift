@@ -11,6 +11,8 @@ import UIKit
 // Controls the player selection screen.
 class SelectViewController: UIViewController, NewNameViewControllerDelegate, ExistingPlayersTableViewControllerDelegate {
     
+    var gameInProgress: Bool = false
+    
     var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     var playerNames: [String]!
     var highscores: [String: Int]!
@@ -36,6 +38,10 @@ class SelectViewController: UIViewController, NewNameViewControllerDelegate, Exi
     @IBAction func existingPlayer2Button(sender: AnyObject) {
         playerIsPlayer1 = false
         performSegueWithIdentifier("existingPlayerSegue", sender: sender)
+    }
+    @IBAction func startGameButton(sender: AnyObject) {
+        gameInProgress = false
+        defaults.setBool(gameInProgress, forKey: "gameInProgress")
     }
 
     // Load view with data from NSUserDefaults, if existing.
