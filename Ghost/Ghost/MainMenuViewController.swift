@@ -38,8 +38,6 @@ class MainMenuViewController: UIViewController {
             if let turn = defaults.boolForKey("playerTurn") as Bool? {
                 currentTurn = turn
             }
-        }
-        if gameInProgress {
             resumeButton.hidden = false
         } else {
             resumeButton.hidden = true
@@ -69,8 +67,7 @@ class MainMenuViewController: UIViewController {
             if let turn = defaults.boolForKey("playerTurn") as Bool? {
                 currentTurn = turn
             }
-        }
-        if gameInProgress == false {
+        } else {
             resumeButton.hidden = true
         }
     }

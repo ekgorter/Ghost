@@ -14,6 +14,7 @@ class HighscoresTableViewController: UITableViewController {
     var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     var highscores: [String: Int]!
     var playerNames: [String]!
+    var sortedPlayerNames: [String]!
         
     // Show navigation bar in screen.
     override func viewWillAppear(animated: Bool) {
@@ -33,6 +34,8 @@ class HighscoresTableViewController: UITableViewController {
         } else {
             highscores = [:]
         }
+        let sortedByHighscores = (highscores as NSDictionary).keysSortedByValueUsingComparator { ($1 as! NSNumber).compare($0 as! NSNumber) }
+        sortedPlayerNames = sortedByHighscores as! [NSString] as! [String]
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +56,7 @@ class HighscoresTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("playerNameCell", forIndexPath: indexPath) as! UITableViewCell
         let row = indexPath.row
-        cell.textLabel?.text = playerNames[row] + " " + String(stringInterpolationSegment: highscores[playerNames[row]]!) as String
+        cell.textLabel?.text = "\(row + 1). " + sortedPlayerNames[row] + " " + String(stringInterpolationSegment: highscores[sortedPlayerNames[row]]!) as String
         return cell
     }
 }
