@@ -5,6 +5,7 @@
 //  Created by Elias Gorter on 19-04-15.
 //  Copyright (c) 2015 EliasGorter6052274. All rights reserved.
 //
+// Class contains dictionary in selected language.
 
 import Foundation
 

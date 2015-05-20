@@ -5,16 +5,31 @@
 //  Created by Elias Gorter on 11-05-15.
 //  Copyright (c) 2015 EliasGorter6052274. All rights reserved.
 //
+// Controls the settings view, where the game dictionary language can be set and 
+// all existing player names and scores can be deleted.
 
 import UIKit
 
 class SettingsViewController: UIViewController {
     
-    // For storing current language selected.
+    // Current language selected is stored in NSUserDefaults.
     var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
     // For selecting dictionary language.
     @IBOutlet weak var languageSegmentedControl: UISegmentedControl!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Loads view with last language selected from NSUserDefaults.
+        switch defaults.integerForKey("language") {
+        case 0:
+            languageSegmentedControl.selectedSegmentIndex = 0
+        case 1:
+            languageSegmentedControl.selectedSegmentIndex = 1
+        default:
+            break
+        }
+    }
     
     // Remembers selected language in NSUserDefaults, 0 is dutch, 1 is english.
     @IBAction func saveLanguageSegmentedControl(sender: UISegmentedControl) {
@@ -27,7 +42,6 @@ class SettingsViewController: UIViewController {
         default:
             break
         }
-        defaults.synchronize()
     }
     
     // Clears all player names and highscores from NSUserDefaults.
@@ -36,19 +50,6 @@ class SettingsViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().removeObjectForKey("highscores")
     }
     
-    // Loads view with last language selected from NSUserDefaults.
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        switch defaults.integerForKey("language") {
-        case 0:
-            languageSegmentedControl.selectedSegmentIndex = 0
-        case 1:
-            languageSegmentedControl.selectedSegmentIndex = 1
-        default:
-            break
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

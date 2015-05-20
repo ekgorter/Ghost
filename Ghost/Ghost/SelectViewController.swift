@@ -5,24 +5,45 @@
 //  Created by Elias Gorter on 03-05-15.
 //  Copyright (c) 2015 EliasGorter6052274. All rights reserved.
 //
+// Controls the player selection view, where new player names can be entered or
+// existing player names can be chosen. Playing with the default "Player 1" and
+// "Player 2" names allows users to play an unranked game.
 
 import UIKit
 
-// Controls the player selection screen.
-class SelectViewController: UIViewController, NewNameViewControllerDelegate, ExistingPlayersTableViewControllerDelegate {
+class SelectViewController: UIViewController, NewNameViewControllerDelegate,
+    ExistingPlayersTableViewControllerDelegate {
     
-    var gameInProgress: Bool = false
-    
+    // Variables contain stored game data from NSUserDefaults.
     var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    var gameInProgress: Bool = false
     var playerNames: [String]!
     var highscores: [String: Int]!
+    // Boolean to distinguish player one and two.
     var playerIsPlayer1: Bool = true
     
-    // Displays currently selected players.
+    // Display currently selected players.
     @IBOutlet weak var player1Label: UILabel!
     @IBOutlet weak var player2Label: UILabel!
     
-    // Show new name entry screen, for player 1 or player 2.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Load view with data from NSUserDefaults, if existing.
+        if let players = defaults.objectForKey("playerNames") as?
+            [String]
+        {
+            playerNames = players
+        } else {
+            playerNames = []
+        }
+        if let scores = defaults.objectForKey("highscores") as? [String: Int] {
+            highscores = scores
+        } else {
+            highscores = [:]
+        }
+    }
+    
+    // Show new name entry view, for player 1 or player 2.
     @IBAction func newPlayer1Button(sender: AnyObject) {
         playerIsPlayer1 = true
     }
@@ -39,28 +60,11 @@ class SelectViewController: UIViewController, NewNameViewControllerDelegate, Exi
         playerIsPlayer1 = false
         performSegueWithIdentifier("existingPlayerSegue", sender: sender)
     }
-    @IBAction func startGameButton(sender: AnyObject) {
-        gameInProgress = false
-        defaults.setBool(gameInProgress, forKey: "gameInProgress")
-    }
-
-    // Load view with data from NSUserDefaults, if existing.
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if let playersIsNotNill = defaults.objectForKey("playerNames") as? [String] {
-            playerNames = playersIsNotNill
-        } else {
-            playerNames = []
-        }
-        if let scores = defaults.objectForKey("highscores") as? [String: Int] {
-            highscores = scores
-        } else {
-            highscores = [:]
-        }
-    }
     
     // Saves player name.
-    func saveName(controller: NewNameViewController, name: String, isPlayer1: Bool) {
+    func saveName(controller: NewNameViewController, name: String, isPlayer1:
+        Bool)
+    {
         if isPlayer1 {
             player1Label.text = name
         } else {
@@ -73,7 +77,9 @@ class SelectViewController: UIViewController, NewNameViewControllerDelegate, Exi
     }
     
     // Shows selected player name in label.
-    func setName(controller: ExistingPlayersTableViewController, name: String, isPlayer1: Bool) {
+    func setName(controller: ExistingPlayersTableViewController, name: String,
+        isPlayer1: Bool)
+    {
         if isPlayer1 {
             player1Label.text = name
         } else {
@@ -81,8 +87,13 @@ class SelectViewController: UIViewController, NewNameViewControllerDelegate, Exi
         }
     }
     
-    // Returns user to player select screen when new name is entered or existing name is chosen.
+    // Returns user to player select screen when new name is entered or chosen.
     @IBAction func unwindToSelect(segue: UIStoryboardSegue) {
+    }
+    
+    // Starts a new game, replacing any game previously in progress.
+    @IBAction func startGameButton(sender: AnyObject) {
+        defaults.setBool(gameInProgress, forKey: "gameInProgress")
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,14 +101,16 @@ class SelectViewController: UIViewController, NewNameViewControllerDelegate, Exi
     }
     
     // Segues for transferring player names between screens.
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         if segue.identifier == "newNameSegue" {
             let vc = segue.destinationViewController as! NewNameViewController
             vc.playerIsPlayer1 = playerIsPlayer1
             vc.delegate = self
         }
         if segue.identifier == "existingPlayerSegue" {
-            let vc = segue.destinationViewController as! ExistingPlayersTableViewController
+            let vc = segue.destinationViewController as!
+                ExistingPlayersTableViewController
             vc.playerIsPlayer1 = playerIsPlayer1
             vc.delegate = self
         }
