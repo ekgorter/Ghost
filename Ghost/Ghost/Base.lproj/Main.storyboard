@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4kG-Se-Khc">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -12,13 +13,15 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EZW-aA-bpW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61176470588235299" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerNameCell" id="Quo-wR-Ypy">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Quo-wR-Ypy" id="rfB-dk-Lf1">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="0.61176470588235299" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -51,7 +54,7 @@
                                     <constraint firstAttribute="height" constant="21" id="W1Z-rm-5Xv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrP-YT-rzz">
@@ -61,14 +64,22 @@
                                     <constraint firstAttribute="height" constant="21" id="uSD-a4-TD8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNh-8X-tHG">
                                 <rect key="frame" x="126" y="140" width="31" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="New">
+                                    <color key="titleColor" red="0.70196078431372544" green="0.78823529411764703" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="newPlayer1Button:" destination="3zX-Wt-ypB" eventType="touchUpInside" id="icf-Jd-arE"/>
                                     <segue destination="q8X-vb-zTf" kind="show" identifier="newNameSegue" id="L5U-qX-Jhq"/>
@@ -76,18 +87,34 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWz-lC-Fuf">
                                 <rect key="frame" x="444" y="140" width="31" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="New">
+                                    <color key="titleColor" red="0.70196078431372544" green="0.78823529411764703" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="newPlayer2Button:" destination="3zX-Wt-ypB" eventType="touchUpInside" id="hPQ-m5-zp8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZw-jC-otb">
                                 <rect key="frame" x="261" y="550" width="79" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Start Game">
+                                    <color key="titleColor" red="0.70196078431372544" green="0.78823529411764703" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startGameButton:" destination="3zX-Wt-ypB" eventType="touchUpInside" id="Mmj-am-cdF"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="gameSegue" id="ApU-uP-Yrz"/>
@@ -95,26 +122,50 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GL-B8-H9b">
                                 <rect key="frame" x="432" y="178" width="54" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Existing">
+                                    <color key="titleColor" red="0.70196078431372544" green="0.78823529411764703" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="existingPlayer2Button:" destination="3zX-Wt-ypB" eventType="touchUpInside" id="1On-cr-aO3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb9-gk-9tW">
                                 <rect key="frame" x="114" y="178" width="54" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Existing">
+                                    <color key="titleColor" red="0.70196078431372544" green="0.78823529411764703" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="existingPlayer1Button:" destination="3zX-Wt-ypB" eventType="touchUpInside" id="57q-ff-sWz"/>
                                     <segue destination="2Wj-Df-liK" kind="show" identifier="existingPlayerSegue" id="OAn-1W-iGS"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ghost.png" translatesAutoresizingMaskIntoConstraints="NO" id="AAH-Fn-Mf0">
+                                <rect key="frame" x="268" y="467" width="65" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="hwe-eA-4lm"/>
+                                    <constraint firstAttribute="width" constant="65" id="tIV-Iq-ExU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61176470588235299" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="AAH-Fn-Mf0" secondAttribute="centerX" constant="-0.5" id="0LB-tQ-80B"/>
                             <constraint firstItem="xb9-gk-9tW" firstAttribute="leading" secondItem="dUi-6z-YhP" secondAttribute="leadingMargin" constant="98" id="251-KX-3ue"/>
                             <constraint firstItem="xb9-gk-9tW" firstAttribute="top" secondItem="LNh-8X-tHG" secondAttribute="bottom" constant="8" id="2iC-va-cbJ"/>
                             <constraint firstItem="cWz-lC-Fuf" firstAttribute="top" secondItem="FrP-YT-rzz" secondAttribute="bottom" constant="8" id="4fa-AV-p4t"/>
@@ -127,6 +178,7 @@
                             <constraint firstItem="LNh-8X-tHG" firstAttribute="top" secondItem="edK-8f-6vd" secondAttribute="bottom" constant="8" id="Xly-7d-hg2"/>
                             <constraint firstItem="FrP-YT-rzz" firstAttribute="top" secondItem="eMy-Bg-KnN" secondAttribute="bottom" constant="47" id="XvO-BH-xzZ"/>
                             <constraint firstItem="0GL-B8-H9b" firstAttribute="top" secondItem="cWz-lC-Fuf" secondAttribute="bottom" constant="8" id="k63-ks-Krs"/>
+                            <constraint firstItem="mZw-jC-otb" firstAttribute="top" secondItem="AAH-Fn-Mf0" secondAttribute="bottom" constant="8" id="qXg-Ng-OD0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cWz-lC-Fuf" secondAttribute="trailing" constant="109" id="sx9-HX-RD9"/>
                             <constraint firstAttribute="centerX" secondItem="mZw-jC-otb" secondAttribute="centerX" id="y4O-xt-D37"/>
                         </constraints>
@@ -156,7 +208,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Player 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40H-SH-QHL">
                                 <rect key="frame" x="16" y="28" width="62" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdb-Ps-Wbu">
@@ -172,6 +224,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TG3-eU-ObZ">
                                 <rect key="frame" x="522" y="28" width="62" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I0U-z5-zBQ">
@@ -180,29 +233,46 @@
                                     <constraint firstAttribute="width" constant="35" id="2Tr-P6-Z5m"/>
                                     <constraint firstAttribute="height" constant="30" id="EZH-NX-y38"/>
                                 </constraints>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOl-UP-g3Z">
                                 <rect key="frame" x="385" y="130" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add">
+                                    <color key="titleColor" red="0.70196078431372544" green="0.78823529411764703" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addLetterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vE0-57-7wN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGE-XJ-pgM">
                                 <rect key="frame" x="507" y="130" width="77" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Main Menu">
+                                    <color key="titleColor" red="0.70196078431372544" green="0.78823529411764703" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="gGK-9K-pg0" kind="unwind" unwindAction="unwindToMenu:" id="Ixi-NK-z9U"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61176470588235299" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="40H-SH-QHL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="2Sh-gJ-uiW"/>
                             <constraint firstAttribute="centerX" secondItem="Kdb-Ps-Wbu" secondAttribute="centerX" id="4Js-J8-NEi"/>
@@ -247,29 +317,45 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXD-34-Dwa">
                                 <rect key="frame" x="273" y="28" width="54" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8Y-2O-MaT">
                                 <rect key="frame" x="280" y="289" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbR-sn-D9W">
                                 <rect key="frame" x="16" y="285" width="78" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Highscores">
+                                    <color key="titleColor" red="0.70196078431372544" green="0.78823529411764703" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="lbp-c4-TW3" kind="show" id="zW4-Qu-Ftf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0g-zn-VG9">
                                 <rect key="frame" x="507" y="285" width="77" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Main Menu">
+                                    <color key="titleColor" red="0.70196078431372544" green="0.78823529411764703" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="73J-g2-3VQ" kind="unwind" unwindAction="unwindToMenu:" id="8mH-db-t6b"/>
                                 </connections>
@@ -277,11 +363,18 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win Reason" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S65-f5-g5z">
                                 <rect key="frame" x="254" y="260" width="92" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ghost.png" translatesAutoresizingMaskIntoConstraints="NO" id="s5F-e4-HAu">
+                                <rect key="frame" x="268" y="505" width="65" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="TS3-cb-uyW"/>
+                                    <constraint firstAttribute="height" constant="75" id="goj-62-MHO"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61176470588235299" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="k8Y-2O-MaT" secondAttribute="centerX" id="2gt-hd-4r5"/>
                             <constraint firstAttribute="centerX" secondItem="dXD-34-Dwa" secondAttribute="centerX" id="7vk-qJ-Btw"/>
@@ -290,9 +383,11 @@
                             <constraint firstItem="Q0g-zn-VG9" firstAttribute="trailing" secondItem="WDf-i9-VIs" secondAttribute="trailingMargin" id="Rt3-LV-IKf"/>
                             <constraint firstAttribute="centerY" secondItem="k8Y-2O-MaT" secondAttribute="centerY" constant="0.5" id="Thl-DR-7hQ"/>
                             <constraint firstItem="dXD-34-Dwa" firstAttribute="top" secondItem="ON3-og-ILp" secondAttribute="bottom" constant="8" id="WEO-PG-K7S"/>
+                            <constraint firstItem="TDf-Se-zFM" firstAttribute="top" secondItem="s5F-e4-HAu" secondAttribute="bottom" constant="20" id="YZI-O2-DmG"/>
                             <constraint firstAttribute="centerY" secondItem="Q0g-zn-VG9" secondAttribute="centerY" id="fCY-dz-j8M"/>
                             <constraint firstAttribute="centerX" secondItem="S65-f5-g5z" secondAttribute="centerX" id="fqH-56-Eiv"/>
                             <constraint firstItem="DbR-sn-D9W" firstAttribute="leading" secondItem="WDf-i9-VIs" secondAttribute="leadingMargin" id="mvv-ss-RZ7"/>
+                            <constraint firstAttribute="centerX" secondItem="s5F-e4-HAu" secondAttribute="centerX" constant="-0.5" id="pvL-Tf-SRA"/>
                         </constraints>
                     </view>
                     <connections>
@@ -313,13 +408,15 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SBn-k0-7D2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61176470588235299" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerNameCell" id="dJb-P8-H6p">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dJb-P8-H6p" id="J3o-fQ-89B">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="0.61176470588235299" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="iw1-d2-Xvk" kind="unwind" unwindAction="unwindToSelect:" id="bB3-Y2-xvA"/>
                                 </connections>
@@ -352,14 +449,22 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoZ-6V-Ouh">
                                 <rect key="frame" x="253" y="72" width="96" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tC9-fu-fOI">
                                 <rect key="frame" x="283" y="139" width="34" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.73725490196078436" green="0.79607843137254897" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="saveNameButton:" destination="q8X-vb-zTf" eventType="touchUpInside" id="259-3Z-jJp"/>
                                     <segue destination="ddt-dO-vmz" kind="unwind" unwindAction="unwindToSelect:" id="pvK-dZ-eFp"/>
@@ -371,11 +476,12 @@
                                     <constraint firstAttribute="height" constant="30" id="6EJ-FH-h66"/>
                                     <constraint firstAttribute="width" constant="150" id="ygM-55-bHr"/>
                                 </constraints>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61176470588235299" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="EoZ-6V-Ouh" secondAttribute="centerX" constant="-1" id="3cg-WB-7Gb"/>
                             <constraint firstAttribute="centerX" secondItem="xc8-E9-JAt" secondAttribute="centerX" constant="-1" id="44w-fp-1dm"/>
@@ -407,50 +513,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-qA-tQ1">
+                                <rect key="frame" x="249" y="72" width="102" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Resume Game">
+                                    <color key="titleColor" red="0.74117647058823533" green="0.7686274509803922" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="resumeSegue" id="5sw-Sg-a1C"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz2-vD-pN5">
                                 <rect key="frame" x="262" y="110" width="76" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="New Game">
+                                    <color key="titleColor" red="0.74117647058823533" green="0.7686274509803922" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="3zX-Wt-ypB" kind="show" id="UVj-ti-isS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7i2-cP-97b">
                                 <rect key="frame" x="261" y="148" width="78" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Highscores">
+                                    <color key="titleColor" red="0.74117647058823533" green="0.7686274509803922" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="lbp-c4-TW3" kind="show" id="MW8-nT-7Tc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrK-IN-D1B">
                                 <rect key="frame" x="272" y="186" width="57" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Settings">
+                                    <color key="titleColor" red="0.74117647058823533" green="0.7686274509803922" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="qri-ad-Ft6" kind="show" id="4Sa-XA-O9e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-qA-tQ1">
-                                <rect key="frame" x="249" y="72" width="102" height="30"/>
-                                <state key="normal" title="Resume Game">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="resumeSegue" id="5sw-Sg-a1C"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ghost.png" translatesAutoresizingMaskIntoConstraints="NO" id="PJD-LY-LYW">
+                                <rect key="frame" x="268" y="224" width="65" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="Lir-Nw-2J2"/>
+                                    <constraint firstAttribute="height" constant="75" id="You-Lw-JGo"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61176470588235299" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="IrK-IN-D1B" secondAttribute="centerX" constant="-0.5" id="4Wx-9k-AsO"/>
                             <constraint firstAttribute="centerX" secondItem="2uP-qA-tQ1" secondAttribute="centerX" id="Afe-Mk-C0i"/>
                             <constraint firstItem="bz2-vD-pN5" firstAttribute="top" secondItem="2uP-qA-tQ1" secondAttribute="bottom" constant="8" id="JDw-Mb-LJQ"/>
                             <constraint firstItem="IrK-IN-D1B" firstAttribute="top" secondItem="7i2-cP-97b" secondAttribute="bottom" constant="8" id="UUO-YF-ZrH"/>
+                            <constraint firstAttribute="centerX" secondItem="PJD-LY-LYW" secondAttribute="centerX" constant="-0.5" id="V9V-by-dFt"/>
                             <constraint firstItem="2uP-qA-tQ1" firstAttribute="top" secondItem="bNw-ap-Bz9" secondAttribute="bottom" constant="8" id="b5w-T8-BbD"/>
+                            <constraint firstItem="PJD-LY-LYW" firstAttribute="top" secondItem="IrK-IN-D1B" secondAttribute="bottom" constant="8" id="bGC-jt-TAm"/>
                             <constraint firstAttribute="centerX" secondItem="bz2-vD-pN5" secondAttribute="centerX" id="hRX-Ue-k20"/>
                             <constraint firstAttribute="centerX" secondItem="7i2-cP-97b" secondAttribute="centerX" id="ofa-K2-F1u"/>
                             <constraint firstItem="7i2-cP-97b" firstAttribute="top" secondItem="bz2-vD-pN5" secondAttribute="bottom" constant="8" id="umb-5P-MsK"/>
@@ -480,7 +626,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dictionary Language:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggp-BH-U1V">
                                 <rect key="frame" x="219" y="257" width="163" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MA8-i3-c1l">
@@ -493,21 +639,30 @@
                                     <segment title="NL"/>
                                     <segment title="EN"/>
                                 </segments>
+                                <color key="tintColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="saveLanguageSegmentedControl:" destination="qri-ad-Ft6" eventType="valueChanged" id="Zh5-m0-vc2"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6W-vv-Rqd">
                                 <rect key="frame" x="253" y="322" width="94" height="30"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.27843137254901962" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Clear All Data">
+                                    <color key="titleColor" red="0.73725490196078436" green="0.79607843137254897" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="clearButton:" destination="qri-ad-Ft6" eventType="touchUpInside" id="gJq-Tc-Mcc"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61176470588235299" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="I6W-vv-Rqd" secondAttribute="centerX" id="8Gu-TZ-QyT"/>
                             <constraint firstAttribute="centerX" secondItem="ggp-BH-U1V" secondAttribute="centerX" constant="-0.5" id="IIg-2u-sgh"/>
@@ -545,8 +700,11 @@
             <point key="canvasLocation" x="-442" y="217"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ghost.png" width="133" height="148"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5sw-Sg-a1C"/>
+        <segue reference="ApU-uP-Yrz"/>
         <segue reference="zW4-Qu-Ftf"/>
     </inferredMetricsTieBreakers>
 </document>

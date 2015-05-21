@@ -11,6 +11,7 @@
 		640BDDD21B00E83C00A7FD0B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640BDDD11B00E83C00A7FD0B /* SettingsViewController.swift */; };
 		640BDE3A1B04B24C00A7FD0B /* HighscoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640BDE391B04B24C00A7FD0B /* HighscoresTableViewController.swift */; };
 		64351DFF1B0B359C00423508 /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64351DFE1B0B359C00423508 /* WinViewController.swift */; };
+		64375BCA1B0D21AA00FCC866 /* ghost.png in Resources */ = {isa = PBXBuildFile; fileRef = 64375BC91B0D21AA00FCC866 /* ghost.png */; };
 		643CA7881ADFDEC90070C5A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CA7871ADFDEC90070C5A5 /* AppDelegate.swift */; };
 		643CA78D1ADFDEC90070C5A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643CA78B1ADFDEC90070C5A5 /* Main.storyboard */; };
 		643CA78F1ADFDEC90070C5A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 643CA78E1ADFDEC90070C5A5 /* Images.xcassets */; };
@@ -41,6 +42,7 @@
 		640BDDD11B00E83C00A7FD0B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		640BDE391B04B24C00A7FD0B /* HighscoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoresTableViewController.swift; sourceTree = "<group>"; };
 		64351DFE1B0B359C00423508 /* WinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
+		64375BC91B0D21AA00FCC866 /* ghost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ghost.png; sourceTree = "<group>"; };
 		643CA7821ADFDEC90070C5A5 /* Ghost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ghost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		643CA7861ADFDEC90070C5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		643CA7871ADFDEC90070C5A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		643CA7841ADFDEC90070C5A5 /* Ghost */ = {
 			isa = PBXGroup;
 			children = (
+				64375BC91B0D21AA00FCC866 /* ghost.png */,
 				643CA7871ADFDEC90070C5A5 /* AppDelegate.swift */,
 				64669E561B0A3BF800935C5D /* MainMenuViewController.swift */,
 				640BDE391B04B24C00A7FD0B /* HighscoresTableViewController.swift */,
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				643CA78D1ADFDEC90070C5A5 /* Main.storyboard in Resources */,
+				64375BCA1B0D21AA00FCC866 /* ghost.png in Resources */,
 				64E5FB4D1AED1AA100A05831 /* english.txt in Resources */,
 				643CA7921ADFDEC90070C5A5 /* LaunchScreen.xib in Resources */,
 				643CA78F1ADFDEC90070C5A5 /* Images.xcassets in Resources */,
@@ -395,6 +399,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Ghost/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -405,6 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Ghost/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
